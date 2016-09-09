@@ -5,7 +5,9 @@ url: "bayesgroup.github.io"
 github_username:  bayesgroup
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 permalink: pretty
 
 highlighter: rouge
