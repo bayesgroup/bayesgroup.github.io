@@ -1,0 +1,15 @@
+# Site settings
+title: "Courses of Bayesian Methods Research Group"
+email: mail@bayesgroup.ru
+url: "bayesgroup.github.io"
+github_username:  bayesgroup
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
