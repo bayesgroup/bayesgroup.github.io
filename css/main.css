@@ -1,5 +1,8 @@
 /* Base */
 /* ----------------------------------------------------------*/
+#60ab48
+
+60ab48
 
 * {
   margin: 0;
@@ -43,7 +46,7 @@ a:visited { color: #205caa; }
 
 .module-header {
   font-size: 24px;
-  color: #2c75ff;
+  color: #60ab48;
   margin-top: 20px;
   margin-bottom: 5px;
 }
@@ -126,7 +129,7 @@ a:visited { color: #205caa; }
 .site-header {
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
-  background-color: #2c75ff;
+  background-color: #60ab48;
 }
 
 .site-title,
