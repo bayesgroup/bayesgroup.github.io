@@ -29,7 +29,7 @@ a:visited { color: #60ab48; }
 .wrap:after { content:""; display:table; }
 .wrap:after { clear: both; }
 .wrap {
-  max-width: 1100px;
+  max-width: 800px;
   padding: 0 30px;
   margin: 0 auto;
   zoom: 1;
@@ -410,7 +410,7 @@ a:visited { color: #60ab48; }
 /* ----------------------------------------------------------*/
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 750px) {
 
   .footer-col-1 { width: 50%; }
 
@@ -431,7 +431,7 @@ a:visited { color: #60ab48; }
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
 
   .wrap { padding: 0 12px; }
 
