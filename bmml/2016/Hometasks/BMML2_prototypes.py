@@ -41,8 +41,8 @@ def calc_L(X, F, B, s, A, q, useMAP = False):
 #             (dh,dw) of villain's face given image Xk
 #           if useMAP = True:
 #             2 x N numpy.array, 
-#             q[1,k] - MAP estimates of dh for X_k 
-#             q[2,k] - MAP estimates of dw for X_k 
+#             q[0,k] - MAP estimates of dh for X_k 
+#             q[1,k] - MAP estimates of dw for X_k 
 #   useMAP ... logical, if true then q is a MAP estimates of 
 #              displacement (dh,dw) of villain's face given image 
 #              Xk 
@@ -81,8 +81,8 @@ def e_step(X, F, B, s, A, useMAP = False):
 #             (dh,dw) of villain's face given image Xk
 #           if useMAP = True:
 #             2 x N numpy.array, 
-#             q[1,k] - MAP estimates of dh for X_k 
-#             q[2,k] - MAP estimates of dw for X_k 
+#             q[0,k] - MAP estimates of dh for X_k 
+#             q[1,k] - MAP estimates of dw for X_k 
 ###################################################################
 
 	
@@ -100,8 +100,8 @@ def m_step(X, q, h, w, useMAP = False):
 #             (dh,dw) of villain's face given image Xk
 #           if useMAP = True:
 #             2 x N numpy.array, 
-#             q[1,k] - MAP estimates of dh for X_k 
-#             q[2,k] - MAP estimates of dw for X_k 
+#             q[0,k] - MAP estimates of dh for X_k 
+#             q[1,k] - MAP estimates of dw for X_k 
 #   h ... 1 x 1, face mask hight
 #   w ... 1 x 1, face mask widht
 #  useMAP ... logical, if true then q is a MAP estimates of 
