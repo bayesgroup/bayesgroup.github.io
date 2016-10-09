@@ -14,7 +14,7 @@ def get_lpx_d_all(X, F, B, s):
 # Output parameters:
 #   
 #   lpx_d_all ... (H-h+1) x (W-w+1) x N numpy.array, 
-#                 px_d_all[dh,dw,k] - log-likelihood of 
+#                 lpx_d_all[dh,dw,k] - log-likelihood of 
 #                 observing image X_k given that the villain's 
 #                 face F is located at displacement (dh, dw)
 #
@@ -93,8 +93,8 @@ def m_step(X, q, h, w, useMAP = False):
 #
 # Input parameters:
 #
-#   X     ... H x W x N numpy.array, N images of size H x W
-#   q  ... if useMAP = False:
+#   X ... H x W x N numpy.array, N images of size H x W
+#   q ... if useMAP = False:
 #             (H-h+1) x (W-w+1) x N numpy.array, 
 #             q[dh,dw,k] - estimate of posterior of displacement 
 #             (dh,dw) of villain's face given image Xk
