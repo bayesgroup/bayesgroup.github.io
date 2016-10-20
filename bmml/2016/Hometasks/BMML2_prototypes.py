@@ -14,7 +14,7 @@ def get_lpx_d_all(X, F, B, s):
 # Output parameters:
 #   
 #   lpx_d_all ... (H-h+1) x (W-w+1) x N numpy.array, 
-#                 px_d_all[dh,dw,k] - log-likelihood of 
+#                 lpx_d_all[dh,dw,k] - log-likelihood of 
 #                 observing image X_k given that the villain's 
 #                 face F is located at displacement (dh, dw)
 #
@@ -41,8 +41,8 @@ def calc_L(X, F, B, s, A, q, useMAP = False):
 #             (dh,dw) of villain's face given image Xk
 #           if useMAP = True:
 #             2 x N numpy.array, 
-#             q[1,k] - MAP estimates of dh for X_k 
-#             q[2,k] - MAP estimates of dw for X_k 
+#             q[0,k] - MAP estimates of dh for X_k 
+#             q[1,k] - MAP estimates of dw for X_k 
 #   useMAP ... logical, if true then q is a MAP estimates of 
 #              displacement (dh,dw) of villain's face given image 
 #              Xk 
@@ -81,8 +81,8 @@ def e_step(X, F, B, s, A, useMAP = False):
 #             (dh,dw) of villain's face given image Xk
 #           if useMAP = True:
 #             2 x N numpy.array, 
-#             q[1,k] - MAP estimates of dh for X_k 
-#             q[2,k] - MAP estimates of dw for X_k 
+#             q[0,k] - MAP estimates of dh for X_k 
+#             q[1,k] - MAP estimates of dw for X_k 
 ###################################################################
 
 	
@@ -93,15 +93,15 @@ def m_step(X, q, h, w, useMAP = False):
 #
 # Input parameters:
 #
-#   X     ... H x W x N numpy.array, N images of size H x W
-#   q  ... if useMAP = False:
+#   X ... H x W x N numpy.array, N images of size H x W
+#   q ... if useMAP = False:
 #             (H-h+1) x (W-w+1) x N numpy.array, 
 #             q[dh,dw,k] - estimate of posterior of displacement 
 #             (dh,dw) of villain's face given image Xk
 #           if useMAP = True:
 #             2 x N numpy.array, 
-#             q[1,k] - MAP estimates of dh for X_k 
-#             q[2,k] - MAP estimates of dw for X_k 
+#             q[0,k] - MAP estimates of dh for X_k 
+#             q[1,k] - MAP estimates of dw for X_k 
 #   h ... 1 x 1, face mask hight
 #   w ... 1 x 1, face mask widht
 #  useMAP ... logical, if true then q is a MAP estimates of 
