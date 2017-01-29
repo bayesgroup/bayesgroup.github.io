@@ -109,8 +109,8 @@ def test_work():
     assert gradf(clf.w, X, y, 1e-3, 1e-3).shape == (100,), "Размерность градиента должна совпадать с числом параметров"
     assert gradf(clf.w, X, y, 1e-3, 1e-3).dtype == np.float, "Вектор градиента, должен состоять из элементов типа np.float"
     assert clf.predict(X).shape == (1000,), "Размер вектора предсказаний, должен совпадать с количеством объектов"
-    assert np.min(clf.predict_proba(X)) >= 0, "Вероятности должны быть не отрицательные"
-    assert np.max(clf.predict_proba(X)) <= 1, "Вероятности должны быть не отрицательные"
+    assert np.min(clf.predict_proba(X)) >= 0, "Вероятности должны быть не меньше, чем 0"
+    assert np.max(clf.predict_proba(X)) <= 1, "Вероятности должны быть не больше, чем 1"
     assert len(set(clf.predict(X))) == 2, "Метод предсказывает больше чем 2 класса на двух классовой задаче"
     print "End tests"
 
