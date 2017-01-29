@@ -309,8 +309,8 @@ a:visited { color: #60ab48; }
 
 .post pre,
 .post code {
-  border: 1px solid #60ab48;
-  background-color: #60ab48;
+  border: 1px solid #91d166;
+  background-color: #91d166;
   padding: 8px 12px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -319,7 +319,7 @@ a:visited { color: #60ab48; }
   overflow:scroll;
 }
 
-.post code { padding: 1px 5px; }
+.post code { padding: 1px 2px; }
 
 .post ul,
 .post ol { margin-left: 1.35em; }
