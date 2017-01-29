@@ -8,7 +8,7 @@
 
 <center>
   <div>
-    <img src="deepbayes-school/2017/task/opt.svg" align="middle"> 
+    <img src="https://bayesgroup.github.io/deepbayes-school/2017/task/opt.svg" align="middle"> 
   </div>
 </center>
 
