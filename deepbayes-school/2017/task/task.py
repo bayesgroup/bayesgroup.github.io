@@ -17,7 +17,7 @@ def lossf(w, X, y, l1, l2):
     :param y: numpy.array размера  (N,), dtype = np.int
     :param l1: float, l1 коэффициент регуляризатора 
     :param l2: float, l2 коэффициент регуляризатора 
-    :return: float, value of loss function
+    :return: float, значение функции потерь
     """
     lossf = # Вам необходимо вычислить значение функции потерь тут, решение может занимать 1 строку
     return lossf
@@ -31,7 +31,7 @@ def gradf(w, X, y, l1, l2):
     :param y: numpy.array размера  (N,), dtype = np.int
     :param l1: float, l1 коэффициент регуляризатора 
     :param l2: float, l2 коэффициент регуляризатора 
-    :return: numpy.array размера  (M,), dtype = np.float, gradient vector d lossf / dw
+    :return: numpy.array размера  (M,), dtype = np.float, градиент функции потерь d lossf / dw
     """
     gradw = # Вам необходимо вычислить градиент функции потерь тут, решение может занимать 1 строку
     return gradw
@@ -68,7 +68,7 @@ class LR(ClassifierMixin, BaseEstimator):
         Возвращает np.array размера (N,) чисел в отрезке от 0 до 1.
 
         :param X: numpy.array размера  (N, M), dtype = np.float
-        :return: numpy.array размера  (N,), dtype = np.int
+        :return: numpy.array размера  (N,), dtype = np.float
         """
         # Вычислите вероятности принадлежности каждого 
         # объекта из X к положительному классу, используйте
