@@ -38,6 +38,15 @@ def gradf(w, X, y, l1, l2):
 
 class LR(ClassifierMixin, BaseEstimator):
     def __init__(self, lr=1, l1=1e-4, l2=1e-4, num_iter=1000, verbose=0):
+        """
+        Создание класса для лог регрессии
+        
+        :param lr: float, длина шага для оптимизатора
+        :param l1: float, l1 коэффициент регуляризатора 
+        :param l2: float, l2 коэффициент регуляризатора
+        :param num_iter: int, число итераций оптимизатора
+        :param verbose: bool, ключик для вывода
+        """
         self.l1 = l1
         self.l2 = l2
         self.w = None
