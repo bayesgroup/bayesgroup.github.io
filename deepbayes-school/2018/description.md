@@ -7,7 +7,7 @@ More specifically, we suggest you to implement Fully Connected Autoencoder using
 We define Autoencoder as two parametric differentiable functions, namely the Encoder (E) and the Decoder(D). Parameters of these two functions are adjusted by minimization of the following loss function:
 <center>
   <div>
-    <img src="pics/eq.png" align="middle" width="640"> 
+    <img src="https://bayesgroup.github.io/deepbayes-school/2018/description/pics/eq.png" align="middle" width="640"> 
   </div>
 </center>
 where the left part is L2 reconstruction loss, the right part is L1 regularizer, and λ is a scalar regularizer weight.  
