@@ -13,7 +13,7 @@ We define Autoencoder as two parametric differentiable functions, namely the Enc
 where the left part is L2 reconstruction loss, the right part is L1 regularizer, and λ is a scalar regularizer weight.  
 
 You are requested to implement the AutoEncoder class. 
-Use [ ```task.py```]() as a template of the solution; all technical details are described there. 
+Use [ ```task.py```](https://bayesgroup.github.io/deepbayes-school/2018/task.py) as a template of the solution; all technical details are described there. 
 Your solution has to be implemented in _python 3.6_.
 Changing prototypes of the functions and using additional libraries (except included) is prohibited, otherwise, the solution will be automatically rejected.
 Please copy to the form only the implementation of the AutoEncoder class.
