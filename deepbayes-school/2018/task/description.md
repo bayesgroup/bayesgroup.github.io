@@ -1,4 +1,4 @@
-<h2 align="center">Qualification task DeepBayes 2018</h2> 
+<h2 align="center">Practical Assignment DeepBayes 2018</h2> 
 
 The strong knowledge of math, programming, and the ability to do research have become the most important skills in machine learning. 
 In this task, we address unsupervised learning, a very fundamental AI problem. 
@@ -20,7 +20,7 @@ Please copy to the form only the implementation of the AutoEncoder class.
 
 In the optional research assignment, we ask you to study:
 
-- Which recontraction loss and regularizer lead to more natural images?
+- Which reconstruction loss and regularizer lead to more natural images?
 - How different parameters of your architecture influence the solution? For example, consider a different number of layers and a number of neurons. Is it beneficial to use noisy layers like Dropout?
 
 We suggest you to check the solution via ```test_work``` function. 
