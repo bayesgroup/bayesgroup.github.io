@@ -15,7 +15,7 @@ class AutoEncoder(nn.Module):
         """
         Here you should define layers of your autoencoder
         Please note, if a layer has trainable parameters, it should be nn.Linear. 
-        ## !! CONVOLUTIONAL LAYERS MUST NOT BE HERE !! ##
+        ## !! CONVOLUTIONAL LAYERS CAN NOT BE HERE !! ##
         However, you can use any noise inducing layers, e.g. Dropout.
 
         Your network must not have more than six layers with trainable parameters.
@@ -120,7 +120,7 @@ def test_work():
     
     assert (hid_x.dim() == 2) and (hid_x.size(1) == 20),  'Hidden representation size must be equal to 20'
     assert (rec_x.dim() == 2) and (rec_x.size(1) == 784), 'Reconstruction size must be equal to 784'
-    assert len(layers_with_params) <= 6, 'The model must contain not more than 6 layers'
+    assert len(layers_with_params) <= 6, 'The model must have no more than 6 layers '
     assert np.all(np.concatenate([list(p.shape) for p in model.parameters()]) <= 800), 'All hidden sizes must be less than 800'
     assert np.all([isinstance(submodules[name], nn.Linear) for name in layers_with_params]), 'All layers with parameters must be nn.Linear'
     print('Success!🎉')
