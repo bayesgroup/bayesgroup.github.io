@@ -18,7 +18,7 @@ Your solution has to be implemented in _python 3.6_.
 Changing prototypes of the functions and using additional libraries (except included) is prohibited, otherwise, the solution will be automatically rejected.
 Please copy to the form only the implementation of the AutoEncoder class.
 
-**UPD:** In your solution λ may be equal to 0 since we define loss as a static method and it is hard to get parameters from it. The research part does not put any restriction on the interface, so you can change it.
+**UPD:** In your solution λ may be equal to 0 since we define loss as a static method and it is hard to get parameters from it. The research part does not put any restrictions on the interface, so you can change it.
 
 In the optional research assignment, we ask you to study:
 
