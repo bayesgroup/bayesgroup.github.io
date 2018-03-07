@@ -51,8 +51,7 @@ class AutoEncoder(nn.Module):
         """
         return self.decode(self.encode(x))
 
-    @staticmethod
-    def loss_function(recon_x, x):
+    def loss_function(self, recon_x, x):
         """
         Calculates the loss function.
 
