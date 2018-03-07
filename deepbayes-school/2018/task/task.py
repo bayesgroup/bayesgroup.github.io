@@ -1,3 +1,4 @@
+import os
 import torch
 import argparse
 import numpy as np
@@ -88,6 +89,7 @@ def train(model, optimizer, train_loader, test_loader):
 
         n = min(data.size(0), 8)
         comparison = torch.cat([data.view(-1, 1, 28, 28)[:n], x_rec.view(-1, 1, 28, 28)[:n]])
+        if not os.path.exists('./pics'): os.makedirs('./pics')
         save_image(comparison.data.cpu(), 'pics/reconstruction_' + str(epoch) + '.png', nrow=n)
     return model
 
@@ -95,7 +97,7 @@ def train(model, optimizer, train_loader, test_loader):
 def test_work():
     print('Start test')
     get_loader = lambda train: torch.utils.data.DataLoader(
-        datasets.MNIST('../data', train=train, download=True, transform=transforms.ToTensor()),
+        datasets.MNIST('./data', train=train, download=True, transform=transforms.ToTensor()),
         batch_size=50, shuffle=True)
     train_loader, test_loader = get_loader(True), get_loader(False)
     
