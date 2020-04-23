@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+    {% if page.mathjax %}
+      {% include mathjax_support.html %}
+    {% endif %}
+
+    {% if page.plyr %}
+      <link rel="stylesheet" href="https://cdn.plyr.io/2.0.11/plyr.css">
+    {% endif %}
+    
+       <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"><!-- <link rel="stylesheet" href="../css/bootstrap-theme.min.css"> -->
+
+   
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <style type="text/css">
+    body {
+        background-color: #FFFAFA !important;
+        background-color: #FAFAFA !important;
+       /* zoom: 1.04; 
+        -moz-transform: scale(1.05); 
+        -moz-transform-origin: 0 0;*/
+    }
+    .containermy {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 11pt;
+        /*line-height: 100%;*/
+        font-style: normal;
+        font-weight: 400;
+        color: #444;
+    }
+
+
+    h1,h2,h3 {
+          font-family: 'Roboto Condensed', sans-serif;
+          line-height: 100%;
+          font-weight: 700;
+          color: #444;
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600|Roboto:400,600" rel="stylesheet" type="text/css">
+
+
+
+ 
+    {% seo %}
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="containermy">
+        <header class="masthead clearfix">
+          <a href="{{ site.baseurl }}/about" class="site-avatar"><img src="{{ site.avatar }}" alt="avatar"  /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="{{ site.baseurl }}/about">{{ site.name }}</a></h1>
+            <p class="site-description" style="margin-top: 0px"><a style="color:#A00" href="{{ site.baseurl }}/">{{ site.description }}</a></p>
+          </div>
+
+          <nav>
+            <a href="{{ site.baseurl }}/"><b>Blog</b></a>
+            <a href="{{ site.baseurl }}/about"><b>About</b></a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="containermy">
+      {{ content }}
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="containermy">
+        <footer class="footer">
+          {% include svg-icons.html %}
+        </footer>
+      </div>
+    </div>
+
+    <script>
+    document.addEventListener('play', function (e) {
+      var audios = document.getElementsByTagName('audio');
+      for (var i = 0, len = audios.length; i < len; i++) {
+        if (audios[i] != e.target) {
+          audios[i].pause();
+          // audios[i].currentTime = 0.0;
+        }
+      }
+    }, true);
+    </script>
+
+    <script type="text/javascript"> 
+      // Show button
+      function look(type){ 
+      param=document.getElementById(type); 
+      if(param.style.display == "none") param.style.display = "block"; 
+      else param.style.display = "none" 
+      } 
+    </script> 
+
+    {% if page.plyr %}
+      <script src="https://cdn.plyr.io/2.0.11/plyr.js"></script>
+      <script>plyr.setup();</script>
+    {% endif %}
+    {% include analytics.html %}
+  </body>
+</html>
