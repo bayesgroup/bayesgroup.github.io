@@ -350,8 +350,8 @@
   iframe {
     box-sizing: border-box;
     display: block;
-    
-  } 
+
+  }
 
   .hint {
     color: #A00;
@@ -390,6 +390,20 @@
   svg:hover {
     fill: red;
   }
+
+  table, th, td {
+    height: 30pt;
+    width: 120pt;
+    text-align: center;
+    font-size: 15pt;
+    font-family: 'Roboto Condensed', sans-serif;
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  /*th, td {*/
+  /*  padding: 5px;*/
+  /*  text-align: left;*/
+  /*}*/
 </style>
 
 <!doctype html>
@@ -399,24 +413,26 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Truncated Quantile Critics</title>
+  <title>Neural Point-Based Graphics</title>
 
-  <meta property="og:title" content="Truncated Quantile Critics" />
+  <meta property="og:image"
+        content="http://dmitryulyanov.github.io/assets/neural-point-pased-rendering/Shoe_nearest_gt.jpg" />
+  <meta property="og:title" content="Neural Point-Based Graphics" />
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- <link rel="stylesheet" href="../css/bootstrap-theme.min.css"> -->
 
   <!-- Google fonts -->
   <!-- <link href="../css/google-fonts.css" rel="stylesheet" type="text/css"> -->
   <link
-    href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600"
-    rel="stylesheet" type="text/css">
+          href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Open+Sans:300italic,400italic,600italic,400,700,300,600"
+          rel="stylesheet" type="text/css">
 
   <!-- Photoswipe -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.css" rel="stylesheet">
@@ -430,8 +446,8 @@
       </script>
 
   <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
   <script>
     function resizeIframe(obj) {
       obj.style.height = 0;
@@ -453,7 +469,7 @@
 
       // document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
     }
-      // window.onresize=resize_iframe;
+    // window.onresize=resize_iframe;
 
 
   </script>
@@ -461,185 +477,185 @@
 </head>
 
 <body>
-  <script src="zepto.min.js"></script>
-  <script>
-    window.addEventListener('message', function (event) {
-      if (height = event.data['height']) {
-        $('iframe').css('height', height + 'px')
-      }
-    });
+<script src="zepto.min.js"></script>
+<script>
+  window.addEventListener('message', function (event) {
+    if (height = event.data['height']) {
+      $('iframe').css('height', height + 'px')
+    }
+  });
 
 
-    // var resizeEvent = new Event('resize');
-    // window.dispatchEvent(resizeEvent);
+  // var resizeEvent = new Event('resize');
+  // window.dispatchEvent(resizeEvent);
 
-  </script>
-  <div class="container">
-
-
-    <!-- ====================================================== -->
-    <!-- ===================== TITLE ========================== -->
-    <!-- ====================================================== -->
-    <center>
-      <div class="title">Controlling Overestimation Bias with Truncated Mixture of Continuous Distributional Quantile Critics</div>
-      <!--<div class="subtitle">Version 2</div>-->
-      <div></div>
-    </center>
-
-    <p></p>
+</script>
+<div class="container">
 
 
-
-    <center>
-      <div class="row row-eq-height" style="margin-bottom: 0px; margin-top: 10px">
-        <!-- <div class="col-sm-12"> -->
-        <div class="col-sm-12 col-sm-offset-2">
-          <div class="col-sm-2" style="margin-bottom: 10px">
-            <!-- <div class="col-sm-12"> -->
-<!--            <a href="https://example.com">-->
-              <img src="assets/projects/kuznetsov.png" class="shadow img_authors img-circle img-responsive">
-              <div class="author"><span style="font-weight: 600">Arsenii Kuznetsov</span><br>Samsung AI </div>
-<!--            </a>-->
-            <!-- </div> -->
-          </div>
-          <div class="col-sm-2" style="margin-bottom: 10px">
-            <!-- <div class="col-sm-12"> -->
-<!--            <a href="https://example.com">-->
-              <img src="assets/projects/shvechikov.jpg" class="shadow img_authors img-circle img-responsive">
-              <div class="author"><span style="font-weight: 600">Pavel Shvechikov</span><br>Samsung AI, HSE</div>
-<!--            </a>-->
-            <!-- </div> -->
-          </div>
-          <div class="col-sm-2" style="margin-bottom: 10px">
-            <!-- <div class="col-sm-12"> -->
-<!--            <a href="https://example.com">-->
-              <img src="assets/projects/grishin.png" class="shadow img_authors img-circle img-responsive">
-              <div class="author"><span style="font-weight: 600">Alexander Grishin</span><br>Samsung AI, HSE</div>
-<!--            </a>-->
-            <!-- </div> -->
-          </div>
-          <div class="col-sm-2" style="margin-bottom: 10px">
-            <!-- <div class="col-sm-12"> -->
-<!--            <a href="https://example.com">-->
-              <img src="assets/projects/vetrov.png" class="shadow img_authors img-circle img-responsive">
-              <div class="author"><span style="font-weight: 600">Dmitry Vetrov</span><br>Samsung AI, HSE</div>
-<!--            </a>-->
-            <!-- </div> -->
-          </div>
-
-        </div>
-        <!-- </div> -->
-      </div>
-    </center>
-
-    <!-- ====================================================== -->
-    <!-- ===================== LINKS ========================== -->
-    <!-- ====================================================== -->
-    <center>
-      <div class="row section" style="margin-bottom: -12px">
-        <div class="col-sm-12">
-          <!-- <div class="col-sm-12 center"> -->
-          <div class="col-sm-3" style="margin-bottom: 12px">
-            <!-- <div class="col-sm-12"> -->
-            <a href="https://example.com">
-              <svg xmlns="http://www.w3.org/2000/svg" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
-              <p></p>
-              <div class="author">Paper</div>
-            </a>
-            <!-- </div> -->
-          </div>
-          <div class="col-sm-3" style="margin-bottom: 12px">
-            <!-- <div class="col-sm-12"> -->
-            <a href="https://example.com">
-              <svg xmlns="http://www.w3.org/2000/svg" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M10 9.333l5.333 2.662-5.333 2.672v-5.334zm14-4.333v14c0 2.761-2.238 5-5 5h-14c-2.761 0-5-2.239-5-5v-14c0-2.761 2.239-5 5-5h14c2.762 0 5 2.239 5 5zm-4 7c-.02-4.123-.323-5.7-2.923-5.877-2.403-.164-7.754-.163-10.153 0-2.598.177-2.904 1.747-2.924 5.877.02 4.123.323 5.7 2.923 5.877 2.399.163 7.75.164 10.153 0 2.598-.177 2.904-1.747 2.924-5.877z"/></svg>
-              <p></p>
-              <div class="author">Video</div>
-            </a>
-            <!-- </div> -->
-          </div>
-          <div class="col-sm-3" style="margin-bottom: 12px">
-            <!-- <div class="col-sm-12"> -->
-            <a href="https://github.com/bayesgroup/tqc">
-              <svg xmlns="http://www.w3.org/2000/svg"  class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <p></p>
-              <div class="author">Code<br>Tensorflow</div>
-            </a>
-            <!-- </div> -->
-          </div>
-          <div class="col-sm-3" style="margin-bottom: 12px">
-            <!-- <div class="col-sm-12"> -->
-            <a href="https://github.com/bayesgroup/tqc_pytorch">
-              <svg xmlns="http://www.w3.org/2000/svg"  class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <p></p>
-              <div class="author">Code<br>PyTorch</div>
-            </a>
-            <!-- </div> -->
-          </div>
-        </div>
-      </div>
-    </center>
-
-    <center>
-      <div class="row section">
-        <img src="assets/tqc/main_exps.svg" width="95%">
-      </div>
-    </center>
-
-    <!-- ====================================================== -->
-    <!-- ===================== ABSTRACT ======================= -->
-    <!-- ====================================================== -->
-    <div class="row section">
-      <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
-      <div class="section_title">Abstract</div>
-      <big>The overestimation bias is one of the major impediments to accurate off-policy learning. This paper investigates a novel way to alleviate the overestimation bias in a continuous control setting. Our method — Truncated Quantile Critics, TQC,— blends three ideas: distributional representation of a critic, truncation of critics prediction, and ensembling of multiple critics. Distributional representation and truncation allow for arbitrary granular overestimation control, while ensembling provides additional score improvements. TQC outperforms the current state of the art on all environments from the continuous control benchmark suite, demonstrating 25% improvement on the most challenging Humanoid environment.</big>
-    </div>
-
-
-    <!-- ====================================================== -->
-    <!-- ===================== TEASER ============== -->
-    <!-- ====================================================== -->
-    <!-- 
-    <br>
+  <!-- ====================================================== -->
+  <!-- ===================== TITLE ========================== -->
+  <!-- ====================================================== -->
   <center>
-    <div class="row section center row-eq-height">
-      <div class="col center col-sm-8 col-sm-offset-2">
-        <div id="cf">
-          <center>
-          <img src="/assets/deep-image-prior/teaser/cropped_01.png" class="img-responsive" id="firstimage"/>
-          <img src="/assets/deep-image-prior/teaser/cropped_02.png" class="img-responsive"/>
-          <img src="/assets/deep-image-prior/teaser/cropped_03.png" class="img-responsive"/>
-          <img src="/assets/deep-image-prior/teaser/cropped_09.png" class="img-responsive"/>
-          <img src="/assets/deep-image-prior/teaser/cropped_05.png" class="img-responsive"/>
-          <img src="/assets/deep-image-prior/teaser/cropped_10.png" class="img-responsive"/>
-          <img src="/assets/deep-image-prior/teaser/cropped_07.png" class="img-responsive" id="lastimage"/>
-          </center>
+    <div class="title">Controlling Overestimation Bias with Truncated Mixture of Continuous Distributional Quantile Critics</div>
+    <!--<div class="subtitle">Version 2</div>-->
+    <div></div>
+  </center>
+
+  <p></p>
+
+
+
+  <center>
+    <div class="row row-eq-height" style="margin-bottom: 0px; margin-top: 10px">
+      <!-- <div class="col-sm-12"> -->
+      <div class="col-sm-12 col-sm-offset-2">
+        <div class="col-sm-2" style="margin-bottom: 10px">
+          <!-- <div class="col-sm-12"> -->
+          <!--            <a href="https://example.com">-->
+          <img src="assets/projects/kuznetsov.png" class="shadow img_authors img-circle img-responsive">
+          <div class="author"><span style="font-weight: 600">Arsenii Kuznetsov</span><br>Samsung AI </div>
+          <!--            </a>-->
+          <!-- </div> -->
         </div>
-        <span style="font-size:14px"><i>Example results on several image restoration problems. We use deep neural networks, but we never train/pretrain them using datasets. We use them as a structured image prior</i>.
-        </span>
+        <div class="col-sm-2" style="margin-bottom: 10px">
+          <!-- <div class="col-sm-12"> -->
+          <!--            <a href="https://example.com">-->
+          <img src="assets/projects/shvechikov.jpg" class="shadow img_authors img-circle img-responsive">
+          <div class="author"><span style="font-weight: 600">Pavel Shvechikov</span><br>Samsung AI, HSE</div>
+          <!--            </a>-->
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-2" style="margin-bottom: 10px">
+          <!-- <div class="col-sm-12"> -->
+          <!--            <a href="https://example.com">-->
+          <img src="assets/projects/grishin.png" class="shadow img_authors img-circle img-responsive">
+          <div class="author"><span style="font-weight: 600">Alexander Grishin</span><br>Samsung AI, HSE</div>
+          <!--            </a>-->
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-2" style="margin-bottom: 10px">
+          <!-- <div class="col-sm-12"> -->
+          <!--            <a href="https://example.com">-->
+          <img src="assets/projects/vetrov.png" class="shadow img_authors img-circle img-responsive">
+          <div class="author"><span style="font-weight: 600">Dmitry Vetrov</span><br>Samsung AI, HSE</div>
+          <!--            </a>-->
+          <!-- </div> -->
+        </div>
+
+      </div>
+      <!-- </div> -->
+    </div>
+  </center>
+
+  <!-- ====================================================== -->
+  <!-- ===================== LINKS ========================== -->
+  <!-- ====================================================== -->
+  <center>
+    <div class="row section" style="margin-bottom: -12px">
+      <div class="col-sm-12">
+        <!-- <div class="col-sm-12 center"> -->
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+          <a href="https://example.com">
+            <svg xmlns="http://www.w3.org/2000/svg" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M11.363 2c4.155 0 2.637 6 2.637 6s6-1.65 6 2.457v11.543h-16v-20h7.363zm.826-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-2.628v3.686h.907v-1.472h1.49v-.732h-1.49v-.698h1.721v-.784zm-4.9 0h-1.599v3.686h1.599c.537 0 .961-.181 1.262-.535.555-.658.587-2.034-.062-2.692-.298-.3-.712-.459-1.2-.459zm-.692.783h.496c.473 0 .802.173.915.644.064.267.077.679-.021.948-.128.351-.381.528-.754.528h-.637v-2.12zm-2.74-.783h-1.668v3.686h.907v-1.277h.761c.619 0 1.064-.277 1.224-.763.095-.291.095-.597 0-.885-.16-.484-.606-.761-1.224-.761zm-.761.732h.546c.235 0 .467.028.576.228.067.123.067.366 0 .489-.109.199-.341.227-.576.227h-.546v-.944z"/></svg>
+            <p></p>
+            <div class="author">Paper</div>
+          </a>
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+          <a href="https://example.com">
+            <svg xmlns="http://www.w3.org/2000/svg" class="img_links img-responsive" viewBox="0 0 24 24"><path d="M10 9.333l5.333 2.662-5.333 2.672v-5.334zm14-4.333v14c0 2.761-2.238 5-5 5h-14c-2.761 0-5-2.239-5-5v-14c0-2.761 2.239-5 5-5h14c2.762 0 5 2.239 5 5zm-4 7c-.02-4.123-.323-5.7-2.923-5.877-2.403-.164-7.754-.163-10.153 0-2.598.177-2.904 1.747-2.924 5.877.02 4.123.323 5.7 2.923 5.877 2.399.163 7.75.164 10.153 0 2.598-.177 2.904-1.747 2.924-5.877z"/></svg>
+            <p></p>
+            <div class="author">Video</div>
+          </a>
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+          <a href="https://github.com/bayesgroup/tqc">
+            <svg xmlns="http://www.w3.org/2000/svg"  class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <p></p>
+            <div class="author">Code<br>Tensorflow</div>
+          </a>
+          <!-- </div> -->
+        </div>
+        <div class="col-sm-3" style="margin-bottom: 12px">
+          <!-- <div class="col-sm-12"> -->
+          <a href="https://github.com/bayesgroup/tqc_pytorch">
+            <svg xmlns="http://www.w3.org/2000/svg"  class="img_links img-responsive" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <p></p>
+            <div class="author">Code<br>PyTorch</div>
+          </a>
+          <!-- </div> -->
+        </div>
       </div>
     </div>
   </center>
- -->
 
-
-    <!-- ====================================================== -->
-    <!-- ===================== Main idea ======================= -->
-    <!-- ====================================================== -->
+  <center>
     <div class="row section">
-      <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
-      <div class="section_title">Main idea</div>
-      <p>
-        To achieve granularity in controlling the overestimation, we "decompose" the expected return into atoms of distributional representation.
-        By varying the number of atoms, we can control the precision of the return distribution approximation.
-      </p>
+      <img src="assets/tqc/main_exps.svg" width="95%">
+    </div>
+  </center>
 
-      <p>
+  <!-- ====================================================== -->
+  <!-- ===================== ABSTRACT ======================= -->
+  <!-- ====================================================== -->
+  <div class="row section">
+    <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+    <div class="section_title">Abstract</div>
+    <big>The overestimation bias is one of the major impediments to accurate off-policy learning. This paper investigates a novel way to alleviate the overestimation bias in a continuous control setting. Our method — Truncated Quantile Critics, TQC,— blends three ideas: distributional representation of a critic, truncation of critics prediction, and ensembling of multiple critics. Distributional representation and truncation allow for arbitrary granular overestimation control, while ensembling provides additional score improvements. TQC outperforms the current state of the art on all environments from the continuous control benchmark suite, demonstrating 25% improvement on the most challenging Humanoid environment.</big>
+  </div>
+
+
+  <!-- ====================================================== -->
+  <!-- ===================== TEASER ============== -->
+  <!-- ====================================================== -->
+  <!--
+  <br>
+<center>
+  <div class="row section center row-eq-height">
+    <div class="col center col-sm-8 col-sm-offset-2">
+      <div id="cf">
+        <center>
+        <img src="/assets/deep-image-prior/teaser/cropped_01.png" class="img-responsive" id="firstimage"/>
+        <img src="/assets/deep-image-prior/teaser/cropped_02.png" class="img-responsive"/>
+        <img src="/assets/deep-image-prior/teaser/cropped_03.png" class="img-responsive"/>
+        <img src="/assets/deep-image-prior/teaser/cropped_09.png" class="img-responsive"/>
+        <img src="/assets/deep-image-prior/teaser/cropped_05.png" class="img-responsive"/>
+        <img src="/assets/deep-image-prior/teaser/cropped_10.png" class="img-responsive"/>
+        <img src="/assets/deep-image-prior/teaser/cropped_07.png" class="img-responsive" id="lastimage"/>
+        </center>
+      </div>
+      <span style="font-size:14px"><i>Example results on several image restoration problems. We use deep neural networks, but we never train/pretrain them using datasets. We use them as a structured image prior</i>.
+      </span>
+    </div>
+  </div>
+</center>
+-->
+
+
+  <!-- ====================================================== -->
+  <!-- ===================== Main idea ======================= -->
+  <!-- ====================================================== -->
+  <div class="row section">
+    <!-- <div class="col-xs-8 col-xs-offset-2 text-justify"> -->
+    <div class="section_title">Main idea</div>
+    <p>
+      To achieve granularity in controlling the overestimation, we "decompose" the expected return into atoms of distributional representation.
+      By varying the number of atoms, we can control the precision of the return distribution approximation.
+    </p>
+
+    <p>
       To control the overestimation, we propose to truncate the approximation of the return distribution:  we drop atoms with the largest locations and estimate the Q-value by averaging the locations of the remaining atoms.
       By varying the total number of atoms and the number of dropped ones, we can flexibly balance between under- and overestimation.
       The truncation naturally accounts for the inflated overestimation due to the high return variance:  the higher the variance, the lower the Q-value estimate after truncation.
-      </p>
+    </p>
 
-      <p>
+    <p>
       To improve the Q-value estimation, we ensemble multiple distributional approximators in the following way.
       First, we form a mixture of distributions predicted by $N$ approximators.
       Second, we truncate this mixture by removing atoms with the largest locations and estimate the Q-value by averaging the locations of the remaining atoms.
@@ -648,72 +664,120 @@
       Such a truncation may be useful in a hypothetical case of one of the critics goes crazy and overestimates much more than the others.
       In this case, the truncation of a mixture removes the atoms predicted by this inadequate critic.
       In contrast, the mixture of truncated distributions truncates all critics evenly.
-      </p>
-      <!-- </div> -->
-    </div>
+    </p>
+    <!-- </div> -->
+  </div>
 
-    <center>
-      <div class="row section">
-        <img src="assets/tqc/scheme.svg" width="95%">
-      </div>
-    </center>
-
-    <!-- ====================================================== -->
-    <!-- ======================= RESULTS ====================== -->
-    <!-- ====================================================== -->
+  <center>
     <div class="row section">
-      <div class="section_title">Results</div>
+      <img src="assets/tqc/scheme.svg" width="95%">
     </div>
+  </center>
 
-    <p>
-      We compare our method with original implementations of state of the art algorithms: SAC, TrulyPPO, and TD3.
-      For HalfCheetah, Walker, and Ant we evaluate methods on the extended frame range: until all methods plateaus (<i>5e6</i> versus usual <i>3e6</i>).
-      For Hopper, we extended the range to <i>3e6</i> steps.
-    </p>
+  <!-- ====================================================== -->
+  <!-- ======================= RESULTS ====================== -->
+  <!-- ====================================================== -->
+  <div class="row section">
+    <div class="section_title">Results</div>
+  </div>
 
-    <p>
-      For our method we selected the number of dropped atoms <i>d</i> for each environment independently, based on separate evaluation.
-      Best value for Hopper is <i>d=5</i>, for HalfCheetah <i>d=0</i> and for the rest <i>d=2</i>.
-    </p>
+  <p>
+    We compare our method with original implementations of state of the art algorithms: SAC, TrulyPPO, and TD3.
+    For HalfCheetah, Walker, and Ant we evaluate methods on the extended frame range: until all methods plateaus (<i>5e6</i> versus usual <i>3e6</i>).
+    For Hopper, we extended the range to <i>3e6</i> steps.
+  </p>
 
-    <p>
+  <p>
+    For our method we selected the number of dropped atoms <i>d</i> for each environment independently, based on separate evaluation.
+    Best value for Hopper is <i>d=5</i>, for HalfCheetah <i>d=0</i> and for the rest <i>d=2</i>.
+  </p>
+
+  <p>
     Figure on top shows the learning curves.
     In table we report the average and std of 10 seeds.
     Each seed performance is an average of 100 last evaluations.
     We evaluate the performance every 1000 frames as an average of 10 deterministic rollouts.
     As our results suggest, TQC performs consistently better than any of the competitors.
-    </p>
+  </p>
+  <p></p>
+  <center>
+    <table style="width:80%">
+      <!--      <caption>Monthly savings</caption>-->
+      <tr>
+        <td>Environment</td>
+        <td>TrulyPPO</td>
+        <td>TD3</td>
+        <td>SAC</td>
+        <td>TQC</td>
+      </tr>
+      <tr>
+        <td>Hopper</td>
+        <td><i>1980</i></td>
+        <td><i>3310</i></td>
+        <td><i>2860</i></td>
+        <td><b><i>3710</i></b></td>
+      </tr>
+      <tr>
+        <td>HalfCheetah</td>
+        <td><i>5780</i></td>
+        <td><i>15120</i></td>
+        <td><i>12410</i></td>
+        <td><b><i>18090</i></b></td>
+      </tr>
+      <tr>
+        <td>Walker<i>2</i>d</td>
+        <td><i>4000</i></td>
+        <td><i>5110</i></td>
+        <td><i>5760</i></td>
+        <td><b><i>7030</i></b></td>
+      </tr>
+      <tr>
+        <td>Ant</td>
+        <td>-<i>10</i></td>
+        <td><i>5680</i></td>
+        <td><i>6160</i></td>
+        <td><b><i>8010</i></b></td>
+      </tr>
+      <tr>
+        <td>Humanoid</td>
+        <td><i>5860</i></td>
+        <td><i>5400</i></td>
+        <td><i>7760</i></td>
+        <td><b><i>9540</i></b></td>
+      </tr>
+    </table>
+  </center>
 
-    <!-- ====================================================== -->
-    <!-- ======================= VIDEO ======================== -->
-    <!-- ====================================================== -->
+  <!-- ====================================================== -->
+  <!-- ======================= VIDEO ======================== -->
+  <!-- ====================================================== -->
 
-    <div class="row section">
-      <div class="section_title">Video</div>
-    </div>
-
-    <!-- allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  -->
-    <!-- <div class="row section videoframe"> -->
-    <center>
-      <iframe width="100%" height="60%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
-              allowfullscreen></iframe>
-    </center>
-    <!-- </div>-->
-
-
+  <div class="row section">
+    <div class="section_title">Video</div>
   </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"   
-    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-    crossorigin="anonymous"></script>
+  <!-- allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  -->
+  <!-- <div class="row section videoframe"> -->
+  <center>
+    <iframe width="100%" height="60%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+            allowfullscreen></iframe>
+  </center>
+  <!-- </div>-->
+
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
 
 
 <!--  <script type="text/javascript">-->
@@ -750,15 +814,15 @@
 <!--  </script>-->
 
 
-  <!-- photoswipe -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script> -->
+<!-- photoswipe -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script> -->
 
-  <!-- <script src="img-gallery.js"></script> -->
-  <!-- Google Analytics -->
-  <!--     <script type="text/javascript">
-      document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
-    </script> -->
+<!-- <script src="img-gallery.js"></script> -->
+<!-- Google Analytics -->
+<!--     <script type="text/javascript">
+    document.getElementById("cf").style.height = document.getElementById("lastimage").height + 8;
+  </script> -->
 <!--  <script>-->
 <!--    (function (i, s, o, g, r, a, m) {-->
 <!--      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {-->
