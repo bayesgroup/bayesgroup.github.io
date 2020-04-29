@@ -395,10 +395,15 @@
     height: 30pt;
     width: 120pt;
     text-align: center;
-    font-size: 15pt;
+    vertical-align: middle;
+    font-weight: normal;
+    font-size: 12pt;
     font-family: 'Roboto Condensed', sans-serif;
     border: 1px solid black;
     border-collapse: collapse;
+  }
+  th {
+    background-color: #c2c0c0;
   }
   /*th, td {*/
   /*  padding: 5px;*/
@@ -494,11 +499,6 @@
 
 </script>
 <div class="container">
-  <p class="vspace"></p>
-  <center>
-    <img src="assets/tqc/tqc_video.gif" width="95%">
-  </center>
-  <p class="vspace"></p>
 
   <!-- ====================================================== -->
   <!-- ===================== TITLE ========================== -->
@@ -555,6 +555,11 @@
     </div>
   </center>
 
+  <p class="vspace"></p>
+  <center>
+    <img src="assets/tqc/tqc_video.gif" width="95%">
+  </center>
+  <p class="vspace"></p>
   <!-- ====================================================== -->
   <!-- ===================== LINKS ========================== -->
   <!-- ====================================================== -->
@@ -707,47 +712,46 @@
     We evaluate the performance every 1000 frames as an average of 10 deterministic rollouts.
     As our results suggest, TQC performs consistently better than any of the competitors.
   </p>
-  <p></p>
+  <p class="vspace"></p>
   <center>
     <table style="width:80%">
-      <!--      <caption>Monthly savings</caption>-->
       <tr>
-        <td>Environment</td>
-        <td>TrulyPPO</td>
-        <td>TD3</td>
-        <td>SAC</td>
-        <td>TQC</td>
+        <th><center>Environment</center></th>
+        <th><center>TrulyPPO</center></th>
+        <th><center>TD3</center></th>
+        <th><center>SAC</center></th>
+        <th><center>TQC</center></th>
       </tr>
       <tr>
-        <td>Hopper</td>
+        <th><center>Hopper</center></th>
         <td>1980</td>
         <td>3310</td>
         <td>2860</td>
         <td><b>3710</b></td>
       </tr>
       <tr>
-        <td>HalfCheetah</td>
+        <th><center>HalfCheetah</center></th>
         <td>5780</td>
         <td>15120</td>
         <td>12410</td>
         <td><b>18090</b></td>
       </tr>
       <tr>
-        <td>Walker2d</td>
+        <th><center>Walker2d</center></th>
         <td>4000</td>
         <td>5110</td>
         <td>5760</td>
         <td><b>7030</b></td>
       </tr>
       <tr>
-        <td>Ant</td>
+        <th><center>Ant</center></th>
         <td>-10</td>
         <td>5680</td>
         <td>6160</td>
         <td><b>8010</b></td>
       </tr>
       <tr>
-        <td>Humanoid</td>
+        <th><center>Humanoid</center></th>
         <td>5860</td>
         <td>5400</td>
         <td>7760</td>
