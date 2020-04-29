@@ -499,10 +499,12 @@
 
 </script>
 <div class="container">
-
+  <p class="vspace"></p>
   <!-- ====================================================== -->
   <!-- ===================== TITLE ========================== -->
   <!-- ====================================================== -->
+
+
   <center>
     <div class="title">Controlling Overestimation Bias with Truncated Mixture of Continuous Distributional Quantile Critics</div>
     <!--<div class="subtitle">Version 2</div>-->
@@ -692,29 +694,29 @@
   <!-- ====================================================== -->
   <div class="row section">
     <div class="section_title">Results</div>
+    <p>
+      We compare our method with original implementations of state of the art algorithms: SAC, TrulyPPO, and TD3.
+      For HalfCheetah, Walker, and Ant we evaluate methods on the extended frame range: until all methods plateaus (<i>5e6</i> versus usual <i>3e6</i>).
+      For Hopper, we extended the range to <i>3e6</i> steps.
+    </p>
+
+    <p>
+      For our method we selected the number of dropped atoms <i>d</i> for each environment independently, based on separate evaluation.
+      Best value for Hopper is <i>d=5</i>, for HalfCheetah <i>d=0</i> and for the rest <i>d=2</i>.
+    </p>
+
+    <p>
+      Figure on top shows the learning curves.
+      In table we report the average and std of 10 seeds.
+      Each seed performance is an average of 100 last evaluations.
+      We evaluate the performance every 1000 frames as an average of 10 deterministic rollouts.
+      As our results suggest, TQC performs consistently better than any of the competitors.
+    </p>
   </div>
 
-  <p>
-    We compare our method with original implementations of state of the art algorithms: SAC, TrulyPPO, and TD3.
-    For HalfCheetah, Walker, and Ant we evaluate methods on the extended frame range: until all methods plateaus (<i>5e6</i> versus usual <i>3e6</i>).
-    For Hopper, we extended the range to <i>3e6</i> steps.
-  </p>
-
-  <p>
-    For our method we selected the number of dropped atoms <i>d</i> for each environment independently, based on separate evaluation.
-    Best value for Hopper is <i>d=5</i>, for HalfCheetah <i>d=0</i> and for the rest <i>d=2</i>.
-  </p>
-
-  <p>
-    Figure on top shows the learning curves.
-    In table we report the average and std of 10 seeds.
-    Each seed performance is an average of 100 last evaluations.
-    We evaluate the performance every 1000 frames as an average of 10 deterministic rollouts.
-    As our results suggest, TQC performs consistently better than any of the competitors.
-  </p>
-  <p class="vspace"></p>
   <center>
-    <table style="width:80%">
+    <table style="width:90%">
+
       <tr>
         <th><center>Environment</center></th>
         <th><center>TrulyPPO</center></th>
@@ -724,39 +726,40 @@
       </tr>
       <tr>
         <th><center>Hopper</center></th>
-        <td>1980</td>
-        <td>3310</td>
-        <td>2860</td>
-        <td><b>3710</b></td>
+        <td>2.0</td>
+        <td>3.3</td>
+        <td>2.9</td>
+        <td><b>3.7</b></td>
       </tr>
       <tr>
         <th><center>HalfCheetah</center></th>
-        <td>5780</td>
-        <td>15120</td>
-        <td>12410</td>
-        <td><b>18090</b></td>
+        <td>5.8</td>
+        <td>15.1</td>
+        <td>12.4</td>
+        <td><b>18.0</b></td>
       </tr>
       <tr>
         <th><center>Walker2d</center></th>
-        <td>4000</td>
-        <td>5110</td>
-        <td>5760</td>
-        <td><b>7030</b></td>
+        <td>4.0</td>
+        <td>5.1</td>
+        <td>5.8</td>
+        <td><b>7.0</b></td>
       </tr>
       <tr>
         <th><center>Ant</center></th>
-        <td>-10</td>
-        <td>5680</td>
-        <td>6160</td>
-        <td><b>8010</b></td>
+        <td>0.0</td>
+        <td>5.7</td>
+        <td>6.2</td>
+        <td><b>8.0</b></td>
       </tr>
       <tr>
         <th><center>Humanoid</center></th>
-        <td>5860</td>
-        <td>5400</td>
-        <td>7760</td>
-        <td><b>9540</b></td>
+        <td>5.9</td>
+        <td>5.4</td>
+        <td>7.8</td>
+        <td><b>9.5</b></td>
       </tr>
+      <caption style="caption-side:bottom; text-align:center">Average of the seed returns (thousands) on MuJoCo</caption>
     </table>
   </center>
 
@@ -775,7 +778,7 @@
             allowfullscreen></iframe>
   </center>
   <!-- </div>-->
-
+  <p class="vspace"></p>
 
 </div>
 
